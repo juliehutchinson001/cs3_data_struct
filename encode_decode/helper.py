@@ -19,7 +19,7 @@ def dec_to_binary(dec_num):
         dec_num = dec_num // 2
     #my final result is the last dec_num gotten from the loop + concatenation of the
     #other coefficients from binary_num:
-    final_binary_num = str(dec_num) + binary_num
+    final_binary_num = binary_num + str(dec_num)
     return final_binary_num
 
     #conversion from 10-base to any base (numerical)
@@ -35,18 +35,20 @@ def n_base_to_change(decimal_num, base):
         decimal_num = decimal_num // base
 
     #concatenate last coefficient to already gotten coefficients to return result in new base
-    final_base_num = str(decimal_num) + conversion
+    final_base_num = conversion + str(decimal_num)
     return final_base_num
 
     #conversion from 10 base to hexadecimal
-    
 
 
 def main():
-    print(dec_to_binary(decimal_number))
     decimal_number = int(input("What's the number to be changed?: "))
     base = int(input("What's the base to be changed to?: "))
     print(n_base_to_change(decimal_number, base))
+
+    gimme_a_binary = dec_to_binary(decimal_number)
+    print(gimme_a_binary)
+    print("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_" + str(decimal_decode(1101110)) + "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_")
 
 if __name__ == "__main__":
     main()
