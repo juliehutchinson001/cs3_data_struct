@@ -20,7 +20,7 @@ def dec_to_binary(dec_num):
     #my final result is the last dec_num gotten from the loop + concatenation of the
     #other coefficients from binary_num:
     final_binary_num = binary_num + str(dec_num)
-    return final_binary_num
+    return int(final_binary_num)
 
     #conversion from 10-base to any base (numerical)
 def n_base_to_change(decimal_num, base):
@@ -36,7 +36,7 @@ def n_base_to_change(decimal_num, base):
 
     #concatenate last coefficient to already gotten coefficients to return result in new base
     final_base_num = conversion + str(decimal_num)
-    return final_base_num
+    return int(final_base_num)
 
     #conversion from 10 base to hexadecimal
 
