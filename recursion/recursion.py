@@ -15,7 +15,24 @@ def factorial(n):
 def factorial_iterative(n):
     # one liner
     # return reduce(lambda x, y: x * y, range(1, n + 1))
+    #check for edge case because the factorial of 0 is 1
+    if n == 0: return 1
     
+    #set counter
+    counter = n - 1
+    #set result
+    final_fact_result = n
+
+    #loop until all of the factorial numbers have been calculated
+    while counter > 0:
+        #multiply result by the next factorial number
+        final_fact_result *= counter
+        #set next factorial number
+        counter -= 1
+    
+    return final_fact_result
+
+
 
 
 def factorial_recursive(n):
