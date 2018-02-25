@@ -37,7 +37,40 @@ def binary_search(array, item):
 
 
 def binary_search_iterative(array, item):
-    
+    #steps:
+    # array.sort()
+    # while true:    #(sub(array) != 0)
+    #    start = 0
+    #    end = len(array) - 1
+    #    index = 
+    #    target = item
+
+    #    array = [start, ..., ..., middle, ..., ..., end]
+
+    #    length = end - start #has to be greater or equal than 2
+    #    middle = (start + end) // 2
+
+    #    if length < 2:
+    #        if start == 0 and array[start] == target: return start
+    #        elif array[end] == target: return end
+    #        return None
+
+    #    -if array[middle] == target:
+    #        index = middle
+    #        return index
+    #    -if array[middle] > target:
+    #        start = 0
+    #        end = middle - 1
+    #        index = start
+    #        target = item
+    #        middle = (start + end)/2
+    #    -if array[middle] < target:
+    #        start = middle + 1
+    #        end = len(array)
+    #        index = start
+    #        target = item
+    #        middle = (start + end)/2
+
 
 
 def binary_search_recursive(array, item, left=None, right=None):
