@@ -41,6 +41,31 @@ def n_base_to_change(decimal_num, base):
     #conversion from 10 base to hexadecimal
 
 
+#decoding binary to decimal
+def decimal_decode(bin_num):
+    #decimal is my final number
+    final_decimal = 0
+    #counter
+    ctr = 0
+
+    #create a list with my binary numbers
+    bin_nums_list = list(str(bin_num))
+    print("---------------{}------------------".format(bin_nums_list))
+
+    #iterating through each of the binary bits [1101110]
+    for index_bit_num in bin_nums_list:
+        #main operation where the binary is converted to decimal
+        final_decimal += (int(index_bit_num)) * (2 ** ctr)
+        ctr += 1
+        print("----------------{}-----------------".format(index_bit_num))
+        print("*****************{}****************".format(final_decimal))
+        
+    print("---------------{}------------------".format(final_decimal))
+
+    return final_decimal
+
+
+
 def main():
     decimal_number = int(input("What's the number to be changed?: "))
     base = int(input("What's the base to be changed to?: "))
@@ -48,7 +73,7 @@ def main():
 
     gimme_a_binary = dec_to_binary(decimal_number)
     print(gimme_a_binary)
-    print("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_" + str(decimal_decode(1101110)) + "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_")
+    print("_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_" + str(decimal_decode(gimme_a_binary)) + "_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_")
 
 if __name__ == "__main__":
     main()
