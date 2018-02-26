@@ -41,9 +41,7 @@ def binary_search_iterative(array, item):
     start = 0
     end = len(new_array) - 1
     middle = (start + end) // 2
-    
-    if item != new_array[:]:
-        return None
+
     #    new_array = [start, ..., ..., middle, ..., ..., end]
 
     while start <= end:
@@ -83,8 +81,22 @@ def binary_search_iterative(array, item):
     
     #    middle = (start + end)/2
 
-def binary_search_recursive(array, item, left=None, right=None):
-    
+def binary_search_recursive(array, item, start=None, end=None):
+    if start == None:
+        array = sorted(array)
+        start = 0
+        end = len(array) - 1
 
+    middle = (start + end) // 2
+    #    array = [start, ..., ..., middle, ..., ..., end]
 
+    if start > end: return None
 
+    if item == array[middle]: return middle
+
+    if item > array[middle]: start = middle + 1
+
+    elif item < array[middle]: end = middle - 1
+
+    # middle = (start + end) // 2
+    return binary_search_recursive(array, item, start, end)
