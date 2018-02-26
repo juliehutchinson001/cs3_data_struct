@@ -37,41 +37,49 @@ def binary_search(array, item):
 
 
 def binary_search_iterative(array, item):
+    new_array = sorted(array)
+    start = 0
+    end = len(new_array) - 1
+    middle = (start + end) // 2
+    
+    #    new_array = [start, ..., ..., middle, ..., ..., end]
+
+    while start <= end:
+        if item == new_array[middle]:
+           return middle
+    
+        if item > new_array[middle]:
+           start = middle + 1
+
+        elif item < new_array[middle]:
+           end = middle - 1
+
+        middle = (start + end) // 2
+
     #steps:
-    # array.sort()
-    # while true:    #(sub(array) != 0)
-    #    start = 0
-    #    end = len(array) - 1
-    #    index = 
-    #    target = item
+    # new_array = sort(array)
+    # start = 0
+    # end = len(new_array) - 1
+    # target = item
 
-    #    array = [start, ..., ..., middle, ..., ..., end]
+    # while true:    #(start <= end bc 0 == 0 --index doesn't overlap yet)
 
-    #    length = end - start #has to be greater or equal than 2
-    #    middle = (start + end) // 2
+    #    new_array = [start, ..., ..., middle, ..., ..., end]
 
-    #    if length < 2:
-    #        if start == 0 and array[start] == target: return start
-    #        elif array[end] == target: return end
-    #        return None
-
-    #    -if array[middle] == target:
+    #    -if new_array[middle] == target:
     #        index = middle
     #        return index
-    #    -if array[middle] > target:
+    
+    #    -if new_array[middle] > target:
     #        start = 0
     #        end = middle - 1
-    #        index = start
-    #        target = item
-    #        middle = (start + end)/2
-    #    -if array[middle] < target:
+    
+    #    -if new_array[middle] < target:
     #        start = middle + 1
-    #        end = len(array)
-    #        index = start
+    #        end = len(new_array)
     #        target = item
-    #        middle = (start + end)/2
-
-
+    
+    #    middle = (start + end)/2
 
 def binary_search_recursive(array, item, left=None, right=None):
     # TODO: implement binary search recursively here
