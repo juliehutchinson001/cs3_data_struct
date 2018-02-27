@@ -37,23 +37,30 @@ def binary_search(array, item):
 
 
 def binary_search_iterative(array, item):
+    #sort the array (create a copy of my original array)
     new_array = sorted(array)
+    #set a start, middle and end variable to track the org arr and sub arrs
     start = 0
     end = len(new_array) - 1
     middle = (start + end) // 2
 
-    #    new_array = [start, ..., ..., middle, ..., ..., end]
-
+    #    new_array = [start, ..., ..., ..., middle, ..., ..., ..., end]
+    #                  0              (start + end) // 2        len(n_arr)
+    #When the end overlaps the start, the loop breaks (base case)
     while start <= end:
+        #item is exactly located at the middle index in the array
         if item == new_array[middle]:
            return middle
     
+        #item is in the right half of the original array
         if item > new_array[middle]:
            start = middle + 1
 
+        #item is in the left half of the original array
         elif item < new_array[middle]:
            end = middle - 1
 
+        #update middle index according to location of item in new subarrays
         middle = (start + end) // 2
 
     #steps:
