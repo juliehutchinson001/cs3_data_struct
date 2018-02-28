@@ -32,12 +32,12 @@ def binary_search(array, item):
     """return the index of item in sorted array or None if item is not found"""
     # implement binary_search_iterative and binary_search_recursive below, then
     # change this to call your implementation to verify it passes all tests
-    # return binary_search_iterative(array, item)
-    return binary_search_recursive(array, item)
+    return binary_search_iterative(array, item)
+    # return binary_search_recursive(array, item)
 
 
 def binary_search_iterative(array, item):
-    #sort the array (create a copy of my original array)
+    #sort the array (create a copy of my original array --personal preference)
     new_array = sorted(array)
     #set a start, middle and end variable to track the org arr and sub arrs
     start = 0
@@ -88,22 +88,31 @@ def binary_search_iterative(array, item):
     
     #    middle = (start + end)/2
 
+#in recursive, three conditions need to be met:
+#   1. A base case
+#   2. A case that moves towards the base case
+#   3. Calling the function inside the function
 def binary_search_recursive(array, item, start=None, end=None):
+    
+    #first condition to avoid reseting value of variables when calling the function
     if start == None:
         array = sorted(array)
         start = 0
         end = len(array) - 1
 
+    # middle value updated in each run of function
     middle = (start + end) // 2
     #    array = [start, ..., ..., middle, ..., ..., end]
 
+    #base case if the start has been overlaped by the end
     if start > end: return None
-
+    # if the item is found in the exact middle of the array
     if item == array[middle]: return middle
-
+    #if the item is located in the right side of the original array
     if item > array[middle]: start = middle + 1
 
+    #if the item is located in the left side of the original array
     elif item < array[middle]: end = middle - 1
 
-    # middle = (start + end) // 2
+    # call the function to update values and move towards finding the item
     return binary_search_recursive(array, item, start, end)
