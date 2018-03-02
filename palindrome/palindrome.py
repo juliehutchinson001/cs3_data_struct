@@ -5,6 +5,15 @@ import string
 # string.ascii_uppercase is 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 # string.ascii_letters is ascii_lowercase + ascii_uppercase
 
+def is_small_str_palindrome(text, alphabet):
+    '''Checks if a string with the length of 1 or less is a palindrome.
+    Returns bool. '''
+    # checks following edge cases:
+    # text = '' (is a palindrome)
+    if len(text) == 0: return True
+    else:
+        # A single char that is NOT in the alpha (is NOT a palindrome)
+        return True if text[0] in alphabet else False
 
 def is_palindrome(text):
     """A string of characters is a palindrome if it reads the same forwards and
