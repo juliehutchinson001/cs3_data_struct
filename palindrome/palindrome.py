@@ -12,19 +12,20 @@ def is_palindrome(text):
     # implement is_palindrome_iterative and is_palindrome_recursive below, then
     # change this to call your implementation to verify it passes all tests
     assert isinstance(text, str), 'input is not a string: {}'.format(text)
-    return is_palindrome_iterative(text)
-    # return is_palindrome_recursive(text)
+    # return is_palindrome_iterative(text)
+    return is_palindrome_recursive(text)
 
 
 def is_palindrome_iterative(text):
-    if len(text) < 2: return True
-
     left_pos, right_pos = 0, len(text) - 1
     
     text = text.lower()
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
-    found_letter = False 
+    if len(text) < 2:
+        return True if is_small_str_palindrome(text, alphabet) else False
+
+    found_letter = False
 
     while left_pos < right_pos:
         left_char, right_char = text[left_pos], text[right_pos]
@@ -46,28 +47,35 @@ def is_palindrome_iterative(text):
 
     return True if found_letter else False
 
-def is_palindrome_recursive(text, start_pos=None, end_pos=None):
+def is_palindrome_recursive(text, left_pos=None, right_pos=None, found_letter=None):
+
+    if left_pos == None or right_pos == None:
+        left_pos, right_pos = 0, len(text) - 1
+        found_letter, text = False, text.lower()
     
-    if start_pos == None and end_pos == None:
-        start_pos = 0
-        end_pos = len(text) - 1
-        text = text.lower()
-        alphabet = 'abbacdefghijklmnopqrstuvwxyz'
-        left_char = text[start_pos]
-        right_char = text[end_pos]
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
-    while left_char < right_char:
-        if len(text) < 2 or text == '':
-            return False
-        if left_char == right_char:
-            is_palindrome_recursive(text, start_pos= start_pos + 1, end_pos=end_pos - 1)
-        else:
-            return False
+    if len(text) < 2:
+        return True if is_small_str_palindrome(text, alphabet) else False
 
+    if left_pos > right_pos:
+        return True if found_letter else False
 
-    # if start_pos <= end_pos:
+    left_char, right_char = text[left_pos], text[right_pos]
+
+    if left_char not in alphabet:
+        return is_palindrome_recursive(text, left_pos + 1, right_pos, found_letter)
         
-    return True
+    if right_char not in alphabet:
+        return is_palindrome_recursive(text, left_pos, right_pos - 1, found_letter)
+        
+    if left_char == right_char:
+        found_letter = True
+        return is_palindrome_recursive(text, left_pos + 1, right_pos - 1, found_letter)
+    else:
+        return False
+
+
 
 def main():
     import sys
