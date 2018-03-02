@@ -1,5 +1,4 @@
 #!python
-
 import string
 # Hint: Use these string constants to ignore capitalization and/or punctuation
 # string.ascii_lowercase is 'abcdefghijklmnopqrstuvwxyz'
@@ -18,18 +17,57 @@ def is_palindrome(text):
 
 
 def is_palindrome_iterative(text):
-    # TODO: implement the is_palindrome function iteratively here
-    pass
-    # once implemented, change is_palindrome to call is_palindrome_iterative
-    # to verify that your iterative implementation passes all tests
+    if len(text) < 2: return True
+
+    left_pos, right_pos = 0, len(text) - 1
+    
+    text = text.lower()
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+    found_letter = False 
+
+    while left_pos < right_pos:
+        left_char, right_char = text[left_pos], text[right_pos]
+        
+        if left_char not in alphabet:
+            left_pos += 1
+            continue
+
+        if right_char not in alphabet:
+            right_pos -= 1
+            continue
+
+        if left_char == right_char:
+            found_letter = True
+            left_pos += 1
+            right_pos -= 1
+        else:
+            return False
+
+    return True if found_letter else False
+
+def is_palindrome_recursive(text, start_pos=None, end_pos=None):
+    
+    if start_pos == None and end_pos == None:
+        start_pos = 0
+        end_pos = len(text) - 1
+        text = text.lower()
+        alphabet = 'abbacdefghijklmnopqrstuvwxyz'
+        left_char = text[start_pos]
+        right_char = text[end_pos]
+
+    while left_char < right_char:
+        if len(text) < 2 or text == '':
+            return False
+        if left_char == right_char:
+            is_palindrome_recursive(text, start_pos= start_pos + 1, end_pos=end_pos - 1)
+        else:
+            return False
 
 
-def is_palindrome_recursive(text, left=None, right=None):
-    # TODO: implement the is_palindrome function recursively here
-    pass
-    # once implemented, change is_palindrome to call is_palindrome_recursive
-    # to verify that your iterative implementation passes all tests
-
+    # if start_pos <= end_pos:
+        
+    return True
 
 def main():
     import sys
