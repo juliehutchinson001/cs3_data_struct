@@ -1,4 +1,4 @@
-from palindromes import is_palindrome
+from palindrome import is_palindrome
 import unittest
 
 
@@ -81,5 +81,19 @@ class TestPalindromes(unittest.TestCase):
         assert is_palindrome('AAAAAAAZ') is False
 
 
+        def test_is_palindrome_without_alpha_chars():
+            assert is_palindrome(',,!,,(,,,,,') is False
+            assert is_palindrome('(*&(*&))') is False
+            assert is_palindrome(',,,,,,,,,') is False
+            assert is_palindrome('!!!!!!') is False
+            assert is_palindrome('!@$!$#%$#') is False
+
 if __name__ == '__main__':
     unittest.main()
+
+# Structure to write test in python
+# import pytest
+# from module_name import name_of_function
+
+# def Test_name_of_function_description_of_test():
+#     assert name_of_function(test) == True or False
