@@ -73,22 +73,37 @@ class LinkedList(object):
     def get_at_index(self, index):
         """Return the item at the given index in this linked list, or
         raise ValueError if the given index is out of range of the list size.
-        Best case running time: ??? under what conditions? [TODO]
-        Worst case running time: ??? under what conditions? [TODO]"""
+        Best case running time: O(1) if index is head or tail
+        Worst case running time: O(n) if index is tail - 1"""
         # Check if the given index is out of range and if so raise an error
         if not (0 <= index < self.size):
             raise ValueError('List index out of range: {}'.format(index))
-        # TODO: Find the node at the given index and return its data
+
+        if index == 0:
+            return self.head.data
+        elif index == (self.size - 1):
+            return self.tail.data
+
+        node = self.head
+        node_index = 0
+        while node is not None:
+            node = node.next
+            node_index += 1
+            if node_index == index:
+                return node.data
+
 
     def insert_at_index(self, index, item):
         """Insert the given item at the given index in this linked list, or
         raise ValueError if the given index is out of range of the list size.
-        Best case running time: ??? under what conditions? [TODO]
-        Worst case running time: ??? under what conditions? [TODO]"""
+        Best case running time: O(1) if the index is head or tail. Just a few constant time operations to reasign head or tail.
+        Worst case running time: O(n) if index is the second to last node. Iterate through entire ll to find the node"""
         # Check if the given index is out of range and if so raise an error
         if not (0 <= index <= self.size):
-            raise ValueError('List index out of range: {}'.format(index))
-        # TODO: Find the node before the given index and insert item after it
+            return None
+            # raise ValueError('List index out of range: {}'.format(index))
+        
+        
 
     def append(self, item):
         """Insert the given item at the tail of this linked list.
