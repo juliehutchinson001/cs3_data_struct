@@ -64,6 +64,7 @@ class TestPalindromes(unittest.TestCase):
 
     def test_is_palindrome_with_non_palindromic_strings(self):
         # examples of non-palindromic strings that should be rejected
+        assert is_palindrome(',') is False
         assert is_palindrome('AB') is False  # even length
         assert is_palindrome('ABC') is False  # odd length
         assert is_palindrome('AAB') is False
