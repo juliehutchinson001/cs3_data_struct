@@ -71,30 +71,42 @@ def is_palindrome_iterative(text):
 
 def is_palindrome_recursive(text, left_pos=None, right_pos=None, found_letter=None):
 
+    #this cond. keeps track of passed variables to avoid resetting left/right pos and so on
     if left_pos == None or right_pos == None:
         left_pos, right_pos = 0, len(text) - 1
         found_letter, text = False, text.lower()
     
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
+
+    #edge case when palindrome is 'a' or ''
     if len(text) < 2:
+        #function to assure palindrome chars are in the alphabet
         return True if is_small_str_palindrome(text, alphabet) else False
 
+     #base case: if left position is not overlapped by right position
     if left_pos > right_pos:
         return True if found_letter else False
 
+    #tracker of character left and right within string
     left_char, right_char = text[left_pos], text[right_pos]
 
+    #if punctuation present in left char position, then skip it
     if left_char not in alphabet:
         return is_palindrome_recursive(text, left_pos + 1, right_pos, found_letter)
         
+    #if punctuation present in right char position, then skip it
     if right_char not in alphabet:
         return is_palindrome_recursive(text, left_pos, right_pos - 1, found_letter)
         
+    #if characters match
     if left_char == right_char:
+        #alphabet char found
         found_letter = True
+        #continue to the next character
         return is_palindrome_recursive(text, left_pos + 1, right_pos - 1, found_letter)
     else:
+        #not a palindrome
         return False
 
 
