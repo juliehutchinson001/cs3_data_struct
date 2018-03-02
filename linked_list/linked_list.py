@@ -103,7 +103,26 @@ class LinkedList(object):
             return None
             # raise ValueError('List index out of range: {}'.format(index))
         
-        
+        new_node = Node(item)
+
+        if index == 0:
+            self.prepend(item)
+            return
+        elif index == (self.size - 1):
+            self.append(item)
+            return
+
+        prev_node = None
+        curr_node = self.head
+        node_index = 0
+        while curr_node is not None:
+            prev_node = curr_node
+            curr_node = curr_node.next
+            node_index += 1
+            if node_index == index:
+                new_node.next = curr_node
+                prev_node.next = new_node
+        self.size += 1
 
     def append(self, item):
         """Insert the given item at the tail of this linked list.
