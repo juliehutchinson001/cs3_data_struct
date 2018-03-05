@@ -89,6 +89,7 @@ class ArrayStack(object):
         """Insert the given item on the top of this stack.
         Running time: O(???) – Why? [TODO]"""
         # Insert given item
+        self.list.append(item)
 
     def peek(self):
         """Return the item on the top of this stack without removing it,
