@@ -97,6 +97,7 @@ class ArrayStack(object):
         """Return the item on the top of this stack without removing it,
         or None if this stack is empty."""
         # Return top item, if any
+        return self.list[-1] if !(self.is_empty()) else None
 
     def pop(self):
         """Remove and return the item on the top of this stack,
