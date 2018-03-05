@@ -99,22 +99,23 @@ class LinkedList(object):
         Best case running time: O(1) if the index is head or tail. Just a few constant time operations to reasign head or tail.
         Worst case running time: O(n) if index is the second to last node. Iterate through entire ll to find the node"""
         # Check if the given index is out of range and if so raise an error
-        if not (0 <= index <= self.size):
-            return None
-            # raise ValueError('List index out of range: {}'.format(index))
+        if not 0 <= index <= self.size:
+            # return None
+            raise ValueError('List index out of range: {}'.format(index))
         
         new_node = Node(item)
 
         if index == 0:
             self.prepend(item)
             return
-        elif index == (self.size - 1):
+        elif index == self.size:
             self.append(item)
             return
 
         prev_node = None
         curr_node = self.head
         node_index = 0
+        
         while curr_node is not None:
             prev_node = curr_node
             curr_node = curr_node.next
@@ -138,6 +139,7 @@ class LinkedList(object):
             self.tail.next = new_node
         # Update tail to new node regardless
         self.tail = new_node
+        self.size += 1
 
     def prepend(self, item):
         """Insert the given item at the head of this linked list.
@@ -151,8 +153,10 @@ class LinkedList(object):
         else:
             # Otherwise insert new node before head
             new_node.next = self.head
+            self.head = new_node
         # Update head to new node regardless
         self.head = new_node
+        self.size += 1
 
     def find(self, quality):
         """Return an item from this linked list satisfying the given quality.
@@ -175,57 +179,105 @@ class LinkedList(object):
     def replace(self, old_item, new_item):
         """Replace the given old_item in this linked list with given new_item
         using the same node, or raise ValueError if old_item is not found.
-        Best case running time: ??? under what conditions? [TODO]
-        Worst case running time: ??? under what conditions? [TODO]"""
-        # TODO: Find the node containing the given old_item and replace its
-        # data with new_item, without creating a new node object
-        pass
+        Best case running time: O(1) if old_item is head or tail
+        Worst case running time: O(n) if old_item is second to last"""
+        
+        if old_item == new_item:
+            # raise ValueError('Not found: {}'.format(old_item))
+            return None
+
+        if self.head.data == old_item:
+            self.head.data = new_item
+            return
+
+        if self.tail.data == old_item:
+            self.tail.data = new_item
+            return
+
+        node = self.head
+        while node is not None:
+            if node.data == old_item:
+                node.data = new_item
+                return
+            node = node.next
+        raise ValueError('Item not found: {}'.format(old_item))
+        
 
     def delete(self, item):
-        """Delete the given item from this linked list, or raise ValueError.
-        Best case running time: ??? under what conditions? [TODO]
-        Worst case running time: ??? under what conditions? [TODO]"""
-        # Start at the head node
-        node = self.head
-        # Keep track of the node before the one containing the given item
-        previous = None
-        # Create a flag to track if we have found the given item
-        found = False
-        # Loop until we have found the given item or the node is None
-        while not found and node is not None:
-            # Check if the node's data matches the given item
-            if node.data == item:
-                # We found data matching the given item, so update found flag
-                found = True
-            else:
-                # Skip to the next node
-                previous = node
-                node = node.next
-        # Check if we found the given item or we never did and reached the tail
-        if found:
-            # Check if we found a node in the middle of this linked list
-            if node is not self.head and node is not self.tail:
-                # Update the previous node to skip around the found node
-                previous.next = node.next
-                # Unlink the found node from its next node
-                node.next = None
-            # Check if we found a node at the head
-            if node is self.head:
-                # Update head to the next node
-                self.head = node.next
-                # Unlink the found node from the next node
-                node.next = None
-            # Check if we found a node at the tail
-            if node is self.tail:
-                # Check if there is a node before the found node
-                if previous is not None:
-                    # Unlink the previous node from the found node
-                    previous.next = None
-                # Update tail to the previous node regardless
-                self.tail = previous
-        else:
-            # Otherwise raise an error to tell the user that delete has failed
+        if self.is_empty():
             raise ValueError('Item not found: {}'.format(item))
+        self.size -= 1
+
+        if self.length() == 1:
+            self.head = None
+            self.tail = None
+            return
+
+        current_node = self.head
+
+        while current_node.data != item:
+            previous_node = current_node
+            current_node = current_node.next
+
+            if current_node is None:
+                raise ValueError('Item not found: {}'.format(item))
+        
+        if current_node == self.head:
+            self.head = current_node.next
+            return
+
+        if current_node == self.tail:
+            self.tail = previous_node
+
+            previous_node.next = None
+            return
+
+        previous_node.next = current_node.next
+
+        # """Delete the given item from this linked list, or raise ValueError.
+        # Best case running time: ??? under what conditions? [TODO]
+        # Worst case running time: ??? under what conditions? [TODO]"""
+        # # Start at the head node
+        # node = self.head
+        # # Keep track of the node before the one containing the given item
+        # previous = None
+        # # Create a flag to track if we have found the given item
+        # found = False
+        # # Loop until we have found the given item or the node is None
+        # while not found and node is not None:
+        #     # Check if the node's data matches the given item
+        #     if node.data == item:
+        #         # We found data matching the given item, so update found flag
+        #         found = True
+        #     else:
+        #         # Skip to the next node
+        #         previous = node
+        #         node = node.next
+        # # Check if we found the given item or we never did and reached the tail
+        # if found:
+        #     # Check if we found a node in the middle of this linked list
+        #     if node is not self.head and node is not self.tail:
+        #         # Update the previous node to skip around the found node
+        #         previous.next = node.next
+        #         # Unlink the found node from its next node
+        #         node.next = None
+        #     # Check if we found a node at the head
+        #     if node is self.head:
+        #         # Update head to the next node
+        #         self.head = node.next
+        #         # Unlink the found node from the next node
+        #         node.next = None
+        #     # Check if we found a node at the tail
+        #     if node is self.tail:
+        #         # Check if there is a node before the found node
+        #         if previous is not None:
+        #             # Unlink the previous node from the found node
+        #             previous.next = None
+        #         # Update tail to the previous node regardless
+        #         self.tail = previous
+        # else:
+        #     # Otherwise raise an error to tell the user that delete has failed
+        #     raise ValueError('Item not found: {}'.format(item))
 
 
 def test_linked_list():
