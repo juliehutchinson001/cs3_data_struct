@@ -48,7 +48,8 @@ class LinkedQueue(object):
     def dequeue(self):
         """Remove and return the item at the front of this queue,
         or raise ValueError if this queue is empty.
-        Running time: O(???) – Why? [TODO]"""
+        Running time: O(1) – Why? changing the ll head pointer is
+        constant time"""
         # TODO: Remove and return front item, if any
 
 
