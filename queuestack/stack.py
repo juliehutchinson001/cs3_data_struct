@@ -31,8 +31,9 @@ class LinkedStack(object):
 
     def push(self, item):
         """Insert the given item on the top of this stack.
-        Running time: O(???) – Why? [TODO]"""
-        # TODO: Push given item
+        Running time: O(1) – Why? Inserting at the top of the ll (only one
+        iteration bc head is on top)"""
+        # Push given item
 
     def peek(self):
         """Return the item on the top of this stack without removing it,
