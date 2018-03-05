@@ -97,7 +97,8 @@ class ArrayQueue(object):
     def front(self):
         """Return the item at the front of this queue without removing it,
         or None if this queue is empty."""
-        # TODO: Return front item, if any
+        # Return front item, if any
+        return self.list[-1] if not (self.is_empty()) else None
 
     def dequeue(self):
         """Remove and return the item at the front of this queue,
