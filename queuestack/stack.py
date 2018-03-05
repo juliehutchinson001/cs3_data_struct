@@ -34,6 +34,7 @@ class LinkedStack(object):
         Running time: O(1) – Why? Inserting at the top of the ll (only one
         iteration bc head is on top)"""
         # Push given item
+        return self.list.prepend(item)
 
     def peek(self):
         """Return the item on the top of this stack without removing it,
