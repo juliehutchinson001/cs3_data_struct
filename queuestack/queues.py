@@ -33,15 +33,17 @@ class LinkedQueue(object):
     #add element to the end of the queue
     def enqueue(self, item):
         """Insert the given item at the back of this queue.
-        Running time: O(???) – Why? [TODO]"""
+        Running time: O(1) – Why? By appending an item to the
+        ll'tail, the time is constant since we have the pointer"""
         # Insert given item
         return self.list.append(item)
 
     def front(self):
         """Return the item at the front of this queue without removing it,
         or None if this queue is empty."""
-        # TODO: Return front item, if any
+        # Return front item, if any
 
+    #remove the oldest element from the front of the queue
     def dequeue(self):
         """Remove and return the item at the front of this queue,
         or raise ValueError if this queue is empty.
