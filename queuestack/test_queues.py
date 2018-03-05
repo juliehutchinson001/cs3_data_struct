@@ -1,13 +1,13 @@
 #!python
 
-from queues import LinkedQueue as q
+from queues import LinkedQueue as Queue
 import unittest
 
 
 class QueueTest(unittest.TestCase):
 
     def test_init(self):
-        q = LinkedQueue()
+        q = Queue()
         assert q.front() is None
         assert q.length() == 0
         assert q.is_empty() is True
