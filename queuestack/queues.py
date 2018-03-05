@@ -30,10 +30,12 @@ class LinkedQueue(object):
         # Count number of items
         return self.list.size
 
+    #add element to the end of the queue
     def enqueue(self, item):
         """Insert the given item at the back of this queue.
         Running time: O(???) – Why? [TODO]"""
-        # TODO: Insert given item
+        # Insert given item
+        return self.list.append(item)
 
     def front(self):
         """Return the item at the front of this queue without removing it,
