@@ -1,6 +1,6 @@
 #!python
 
-from queue import Queue as q
+from queues import Queue as q
 import unittest
 
 
