@@ -105,6 +105,7 @@ class ArrayStack(object):
         Running time: O(1) – Why? the last item of an array can
         easily be accessed, so the time is constant"""
         # Remove and return top item, if any
+        return self.list.pop(-1) if !(self.is_empty()) else None
 
 
 # Implement LinkedStack and ArrayStack above, then change the assignment below
