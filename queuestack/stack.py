@@ -87,7 +87,9 @@ class ArrayStack(object):
 
     def push(self, item):
         """Insert the given item on the top of this stack.
-        Running time: O(???) – Why? [TODO]"""
+        Running time: O(1) – Why? only one insertion to the
+        top of stack as long as there is space (avoid stack
+        overflow)"""
         # Insert given item
         self.list.append(item)
 
