@@ -104,7 +104,8 @@ class ArrayQueue(object):
         """Remove and return the item at the front of this queue,
         or raise ValueError if this queue is empty.
         Running time: O(???) – Why? [TODO]"""
-        # TODO: Remove and return front item, if any
+        # Remove and return front item, if any
+        return self.list.pop(self.list[-1]) if not (self.is_empty()) else None
 
 
 # Implement LinkedQueue and ArrayQueue above, then change the assignment below
