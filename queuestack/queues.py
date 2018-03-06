@@ -56,7 +56,7 @@ class LinkedQueue(object):
         #save top item in the queue
         top_item = self.list.head.data
         #deleting top item from queue
-        self.list.delete(self.list.head.data)
+        self.list.delete(top_item)
 
         # Remove and return top item, if any
         return top_item
@@ -81,7 +81,7 @@ class ArrayQueue(object):
     def is_empty(self):
         """Return True if this queue is empty, or False otherwise."""
         # Check if empty
-        return True if len(self.list) == 0 else False
+        return len(self.list) == 0
 
     def length(self):
         """Return the number of items in this queue."""
@@ -107,7 +107,11 @@ class ArrayQueue(object):
         Running time: O(1) – Why? the last item can be easily 
         accessed through the index, so it represents constant time"""
         # Remove and return front item, if any
-        return self.list.pop() if not self.is_empty() else None
+        # Remove and return front item, if any
+        if self.list.is_empty() == True:
+            error_message = raise ValueError('queue is empty: {}'.format(self))
+        
+        return self.list.pop() if not self.is_empty() else error_message
 
 
 # Implement LinkedQueue and ArrayQueue above, then change the assignment below
