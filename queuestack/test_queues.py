@@ -1,6 +1,7 @@
 #!python
 
-from queues import LinkedQueue as Queue
+# from queues import LinkedQueue as Queue
+from queues import ArrayQueue as Queue
 import unittest
 
 

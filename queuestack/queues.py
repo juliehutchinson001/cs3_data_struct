@@ -108,10 +108,8 @@ class ArrayQueue(object):
         accessed through the index, so it represents constant time"""
         # Remove and return front item, if any
         # Remove and return front item, if any
-        if self.list.is_empty() == True:
-            error_message = raise ValueError('queue is empty: {}'.format(self))
         
-        return self.list.pop() if not self.is_empty() else error_message
+        return self.list.pop() if not self.is_empty() else None
 
 
 # Implement LinkedQueue and ArrayQueue above, then change the assignment below
