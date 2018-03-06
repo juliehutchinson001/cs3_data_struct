@@ -97,15 +97,15 @@ class ArrayStack(object):
         """Return the item on the top of this stack without removing it,
         or None if this stack is empty."""
         # Return top item, if any
-        return self.list[-1] if not (self.is_empty()) else None
+        return self.list[-1] if not self.is_empty() else None
 
     def pop(self):
         """Remove and return the item on the top of this stack,
         or raise ValueError if this stack is empty.
         Running time: O(1) – Why? the last item of an array can
-        easily be accessed, so the time is constant"""
+        easily be accessed because of the index, so the time is constant"""
         # Remove and return top item, if any
-        return self.list.pop(self.list[-1]) if not (self.is_empty()) else None
+        return self.list.pop() if not self.is_empty() else None
 
 
 # Implement LinkedStack and ArrayStack above, then change the assignment below
