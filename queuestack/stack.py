@@ -52,7 +52,7 @@ class LinkedStack(object):
         #save top item in the stack
         top_item = self.list.head.data
         #deleting top item from stack
-        self.list.delete(self.list.head.data)
+        self.list.delete(top_item)
 
         # Remove and return top item, if any
         return top_item
