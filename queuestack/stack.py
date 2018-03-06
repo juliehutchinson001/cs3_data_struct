@@ -22,7 +22,7 @@ class LinkedStack(object):
     def is_empty(self):
         """Return True if this stack is empty, or False otherwise."""
         # Check if empty
-        return True if self.list.is_empty() else False
+        return self.list.is_empty()
 
     def length(self):
         """Return the number of items in this stack."""
