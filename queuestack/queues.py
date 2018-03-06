@@ -22,7 +22,7 @@ class LinkedQueue(object):
     def is_empty(self):
         """Return True if this queue is empty, or False otherwise."""
         # Check if empty
-        return True if self.list.is_empty() == 0 else False
+        return True if self.list.is_empty() else False
 
 
     def length(self):
@@ -90,7 +90,8 @@ class ArrayQueue(object):
 
     def enqueue(self, item):
         """Insert the given item at the back of this queue.
-        Running time: O(???) – Why? [TODO]"""
+        Running time: O(n) – Why? shifting positions within an arr
+        represents shuffling through each of the items"""
         # Insert given item
         return self.list.insert(0, item)
 
@@ -98,17 +99,18 @@ class ArrayQueue(object):
         """Return the item at the front of this queue without removing it,
         or None if this queue is empty."""
         # Return front item, if any
-        return self.list[-1] if not (self.is_empty()) else None
+        return self.list[-1] if not self.is_empty() else None
 
     def dequeue(self):
         """Remove and return the item at the front of this queue,
         or raise ValueError if this queue is empty.
-        Running time: O(???) – Why? [TODO]"""
+        Running time: O(1) – Why? the last item can be easily 
+        accessed through the index, so it represents constant time"""
         # Remove and return front item, if any
-        return self.list.pop(self.list[-1]) if not (self.is_empty()) else None
+        return self.list.pop() if not self.is_empty() else None
 
 
 # Implement LinkedQueue and ArrayQueue above, then change the assignment below
 # to use each of your Queue implementations to verify they each pass all tests
-Queue = LinkedQueue
-# Queue = ArrayQueue
+# Queue = LinkedQueue
+Queue = ArrayQueue
