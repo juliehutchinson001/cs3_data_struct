@@ -44,4 +44,8 @@ A tree has nodes with enclosed data and a connection from a node to another node
 
 ![This is a tree](https://github.com/juliehutchinson001/cs3_data_struct/blob/master/notes/images/Tree.jpg "Example of a Tree")
 
-Looking at the previous diagram, there are more characteristics that come with a tree. For example, the term <strong>child</strong> is used when referring a node that is connected to a <strong>parent node</strong>, and all the nodes that have no children, are called <strong>leaf nodes</strong>.
+Looking at the previous diagram, there are more characteristics that come with a tree. For example, the term <strong>child</strong> is used when referring a node that is connected to a <strong>parent node</strong>, and all the nodes that have no children, are called <strong>leaf nodes</strong>. Parent - children relationships are not independent from each other.
+
+## Binary Search Trees
+
+You might be thinking at this point, what is the relationship between a tree and a binary search tree? Well, the previous image was not just a tree, it can also be referred as a binary search tree because of several reasons. Each of the nodes have two children, meaning this types of trees can have at most two children nodes, where the left child will always be smaller than the parent node, and the right child will always be bigger, in quantity, than the parent node.
