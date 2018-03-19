@@ -46,6 +46,10 @@ A tree has nodes with enclosed data and a connection from a node to another node
 
 Looking at the previous diagram, there are more characteristics that come with a tree. For example, the term <strong>child</strong> is used when referring a node that is connected to a <strong>parent node</strong>, and all the nodes that have no children, are called <strong>leaf nodes</strong>. Parent - children relationships are not independent from each other.
 
-## Binary Search Trees
+## Binary Search Trees (BST)
 
 You might be thinking at this point, what is the relationship between a tree and a binary search tree? Well, the previous image was not just a tree, it can also be referred as a binary search tree because of several reasons. Each of the nodes have two children, meaning this types of trees can have at most two children nodes, where the left child will always be smaller than the parent node, and the right child will always be bigger, in quantity, than the parent node.
+
+The most noticeable benefit of using a binary search tree is that on every decision taken (every iteration), to find an specific data, we discard half of the data from which we are searching --similar to a binary search, where time complexity is O(logN).
+
+### BST Height
