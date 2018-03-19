@@ -1,6 +1,6 @@
 # Understanding Binary Search Trees
 
-<table>
+<center><table>
     <tr>
         <td><center>__Binary Search Trees__</center></td>
     </tr>
@@ -13,11 +13,11 @@
     <tr>
         <td>Removing an item: O(logN)</td>
     </tr>
-</table>
+</table></center>
 
 The weight that time complexity entails is closely related with the  importance to create a data structure at compile time, that is going to verify every operation of a compiled code. A clear example involves comparing two common structures such as:
 
-<table>
+<center><table>
     <tr>
         <td><center>__Sorted Arrays__</center></td>
         <td><center>__Linked Lists__</center></td>
@@ -34,7 +34,7 @@ The weight that time complexity entails is closely related with the  importance 
         <td>Remove an item: O(N)</td>
         <td>Remove item by reference: O(1)</td>
     </tr>
-</table>
+</table></center>
 
 Let's take a look about Facebook webpage, there are some users who are only going to search for other users, or they can also be curious about their friend's pictures; and other users, like me for example that enjoy mostly uploading pictures to share in facebook profile.
 
