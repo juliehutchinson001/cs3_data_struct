@@ -42,6 +42,6 @@ The previous examples are a few of the many actions possible in a webpage, where
 
 A tree has nodes with enclosed data and a connection from a node to another node that represent the edges of the tree. So, the first head or root node has a reference to be identified, and from this node, all the rest of the nodes can be found or accessed through a unique path. If a node has more than one way to be located, this structure is not a tree.
 
-![This is a tree](/Users/juliehutchinson/code/cs3_data_struct/notes/Tree.jpg "Example of a Tree")
+![This is a tree](https://github.com/juliehutchinson001/cs3_data_struct/blob/master/notes/images/Tree.jpg "Example of a Tree")
 
 Looking at the previous diagram, there are more characteristics that come with a tree. For example, the term <strong>child</strong> is used when referring a node that is connected to a <strong>parent node</strong>, and all the nodes that have no children, are called <strong>leaf nodes</strong>.
