@@ -18,11 +18,18 @@ class Set(object):
 
     def add(self, element):
         #this method adds element to the set if it does not exist
-        
         if self.contains(element): 
             return ValueError("{} element already exists".format(element))
         else:
-            self.set.set(element, self.contains(element))
+            self.set.set(element, element)
             self.size += 1
+
+    def remove(self, element):
+        #this method removes element from set if exists
+        if self.contains(element):
+            self.size -= 1
+            self.set.delete(element)
+        else: 
+            return ValueError("element to be removed doesn't exists")
 
     
