@@ -8,4 +8,8 @@ class Set(object):
         #track number of elements given 
         self.size = 0 if elements == None else len(self.set)
 
+    def size(self):
+        #this method returns the size of the set
+        return self.set.size
+
     
