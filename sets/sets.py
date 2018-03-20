@@ -16,4 +16,13 @@ class Set(object):
         #this method returns a boolean if an element is in the set or not
         return self.set.contains(element)
 
+    def add(self, element):
+        #this method adds element to the set if it does not exist
+        
+        if self.contains(element): 
+            return ValueError("{} element already exists".format(element))
+        else:
+            self.set.set(element, self.contains(element))
+            self.size += 1
+
     
