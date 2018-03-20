@@ -12,4 +12,8 @@ class Set(object):
         #this method returns the size of the set
         return self.set.size
 
+    def contains(self, element):
+        #this method returns a boolean if an element is in the set or not
+        return self.set.contains(element)
+
     
