@@ -14,11 +14,11 @@ def is_sorted(items):
     items_len = len(items)
 
     for index, item in enumerate(items):
-        
-        if index + 1 = items_len: return True 
-        if item > items[index + 1]: return False 
+        #prevent loop from going out of range
+        if index + 1 = items_len: return True #items are sorted
+        if item > items[index + 1]: return False #items not sorted
     
-
+    #for items with length == 0
     return True
 
 def bubble_sort(items):
