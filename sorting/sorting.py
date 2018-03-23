@@ -48,8 +48,7 @@ def bubble_sort(items):
                 is_sorted = False
 
                 #items are being organized
-                items[index] = items[index + 1]
-                items[index + 1] = items[index]
+                items[index] items[index + 1] = items[index + 1], items[index]
         
         #keep last sorted item position to not double check
         items_len -= 1
