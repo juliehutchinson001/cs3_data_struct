@@ -1,6 +1,6 @@
 #!python
 
-from binarytree import BinarySearchTree, BinaryTreeNode
+from binary_tree import BinarySearchTree, BinaryTreeNode
 import unittest
 
 
