@@ -10,8 +10,16 @@ def is_sorted(items):
                      count all the ranges
     # Check that all adjacent items are in order, 
     # return early if not"""
+
+    items_len = len(items)
+
+    for index, item in enumerate(items):
+        
+        if index + 1 = items_len: return True 
+        if item > items[index + 1]: return False 
     
 
+    return True
 
 def bubble_sort(items):
     """Sort given items by swapping adjacent items that are out of order, and
