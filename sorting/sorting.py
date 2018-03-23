@@ -24,10 +24,35 @@ def is_sorted(items):
 def bubble_sort(items):
     """Sort given items by swapping adjacent items that are out of order, and
     repeating until all items are in sorted order.
-    Running time: ??? Why and under what conditions?
-    Memory usage: ??? Why and under what conditions?"""
-    # Repeat until all items are in sorted order
-    # Swap adjacent items that are out of order
+    Running time: O(n) Why and under what conditions?
+                  O(n^2) Why and under what conditions?
+    Memory usage: O(n^2) Why and under what conditions?"""
+    
+    
+
+    items_len = len(items)
+    is_sorted = False
+
+    while not (is_sorted):
+        
+        is_sorted = True
+
+        
+        for index, item in enumerate(items):
+
+
+            if index + 1 >= items_len: break
+
+
+            if items_len > items[index + 1]:
+                is_sorted = False
+
+
+                items[index] = items[index + 1]
+                items[index + 1] = items[index]
+        
+
+        items_len -= 1
 
 
 def selection_sort(items):
