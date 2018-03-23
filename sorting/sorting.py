@@ -27,31 +27,31 @@ def bubble_sort(items):
     Running time: O(n) Why and under what conditions?
                   O(n^2) Why and under what conditions?
     Memory usage: O(n^2) Why and under what conditions?"""
-    
-    
+    # Repeat until all items are in sorted order
+    # Swap adjacent items that are out of order
 
     items_len = len(items)
     is_sorted = False
 
     while not (is_sorted):
-        
+        #the list is sorted avoiding the swapping of items
         is_sorted = True
 
-        
+        # loop to sort items by swapping adjacent unordered items
         for index, item in enumerate(items):
 
-
+            #avoid aditional checking once items are sorted
             if index + 1 >= items_len: break
 
-
+            #items are unordered
             if items_len > items[index + 1]:
                 is_sorted = False
 
-
+                #items are being organized
                 items[index] = items[index + 1]
                 items[index + 1] = items[index]
         
-
+        #keep last sorted item position to not double check
         items_len -= 1
 
 
