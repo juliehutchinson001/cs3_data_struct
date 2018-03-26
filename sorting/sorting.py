@@ -63,10 +63,7 @@ def selection_sort(items):
     # Find minimum item in unsorted items
     # Swap it with first unsorted item
 
-    last_unsorted = 0
-    is_sorted = False
-    smallest_index = 0
-    items_len = range(len(items))
+    last_unsorted, is_sorted, smallest_index, items_len = 0, False, 0, range (len(items))
     
     #base condition
     while not is_sorted:
@@ -85,18 +82,14 @@ def selection_sort(items):
         if last_unsorted == len(items):
             return None
 
-        current_sm = items[smallest_index] 
-        unsorted = items[last_unsorted]
-        
         # the smallest item is swaped with the first unsorted item
-        items[smallest_index] = unsorted 
-        items[last_unsorted] = current_sm
+        current_sm, unsorted = items[smallest_index], items[last_unsorted]
+        items[smallest_index], items[last_unsorted] = unsorted, current_sm
 
         last_unsorted += 1
         
         # Restart index counter to the first item in the unsorted array
-        smallest_index = last_unsorted
-        items_len = range(last_unsorted, len(items))
+        smallest_index, items_len = last_unsorted, `range(last_unsorted, len(items))
         
         # the loop ends once all items are sorted
         is_sorted = True if last_unsorted == len(items) else False
