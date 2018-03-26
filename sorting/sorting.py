@@ -59,9 +59,40 @@ def selection_sort(items):
     unsorted item, and repeating until all items are in sorted order.
     Running time: ??? Why and under what conditions?
     Memory usage: ??? Why and under what conditions?"""
-    # Repeat until all items are in sorted order
-    # Find minimum item in unsorted items
-    # Swap it with first unsorted item
+
+
+
+
+    last_unsorted = 0
+    is_sorted = False
+    smallest_index = 0
+    items_len = range(len(items))
+    
+    while not is_sorted:
+        for index in items_len:
+            if index + 1 == len(items):
+                break
+            if items[smallest_index] > items[index + 1]:
+                smallest_index = index + 1
+
+        if last_unsorted == len(items):
+            return None
+
+        current_sm = items[smallest_index] 
+        unsorted = items[last_unsorted]
+        
+
+        items[smallest_index] = unsorted 
+        items[last_unsorted] = current_sm
+
+        last_unsorted += 1
+        
+
+        smallest_index = last_unsorted
+        items_len = range(last_unsorted, len(items))
+        
+
+        is_sorted = True if last_unsorted == len(items) else False
 
 
 def insertion_sort(items):
