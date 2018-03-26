@@ -68,10 +68,17 @@ def selection_sort(items):
     smallest_index = 0
     items_len = range(len(items))
     
+    #base condition
     while not is_sorted:
+
+        #generates the swaping of items
         for index in items_len:
+
+            #avoid aditional checking once items are sorted
             if index + 1 == len(items):
                 break
+            
+            #if items are unordered
             if items[smallest_index] > items[index + 1]:
                 smallest_index = index + 1
 
