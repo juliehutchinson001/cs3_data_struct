@@ -48,7 +48,7 @@ def bubble_sort(items):
                 is_sorted = False
 
                 #items are being organized
-                items[index] items[index + 1] = items[index + 1], items[index]
+                items[index], items[index + 1] = items[index + 1], items[index]
         
         #keep last sorted item position to not double check
         items_len -= 1
@@ -59,9 +59,9 @@ def selection_sort(items):
     unsorted item, and repeating until all items are in sorted order.
     Running time: ??? Why and under what conditions?
     Memory usage: ??? Why and under what conditions?"""
-
-
-
+    # Repeat until all items are in sorted order
+    # Find minimum item in unsorted items
+    # Swap it with first unsorted item
 
     last_unsorted = 0
     is_sorted = False
@@ -81,17 +81,17 @@ def selection_sort(items):
         current_sm = items[smallest_index] 
         unsorted = items[last_unsorted]
         
-
+        # the smallest item is swaped with the first unsorted item
         items[smallest_index] = unsorted 
         items[last_unsorted] = current_sm
 
         last_unsorted += 1
         
-
+        # Restart index counter to the first item in the unsorted array
         smallest_index = last_unsorted
         items_len = range(last_unsorted, len(items))
         
-
+        # the loop ends once all items are sorted
         is_sorted = True if last_unsorted == len(items) else False
 
 
