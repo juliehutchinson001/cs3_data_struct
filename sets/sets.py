@@ -26,10 +26,4 @@ class Set(object):
 
     def remove(self, element):
         #this method removes element from set if exists
-        if self.contains(element):
-            self.size -= 1
-            self.set.delete(element)
-        else: 
-            return ValueError("element to be removed doesn't exists")
-
-    
+        
