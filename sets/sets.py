@@ -50,3 +50,10 @@ class Set(object):
 
     def difference(self, other_set):
         #return a new set that is the difference of this set and other_set
+        difference_set = Set(4)
+        
+        for element in self.get_keys():
+            if element not in other_set.get_keys():
+                difference_set.add_element(element)
+        return difference_set
+
