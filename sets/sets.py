@@ -57,3 +57,5 @@ class Set(object):
                 difference_set.add_element(element)
         return difference_set
 
+    def is_subset(self, other_set):
+        #return a boolean indicating whether other_set is a subset of this set
