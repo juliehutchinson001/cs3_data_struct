@@ -68,3 +68,27 @@ class Set(object):
             else:
                 return False
         return True
+
+def test_set():
+    testing_set = Set()
+    testing_set.add("Julie")
+    testing_set.add("Hutchinson")
+    testing_set.add("welcome")
+    testing_set.add("Julie")
+    testing_set.contains("Julie")
+    testing_set.contains("Hutchinson")
+    testing_set.contains("welcome")
+    other_set = Set()
+    other_set.add("welcome")
+    other_set.add("data")
+    other_set.add("structures")
+    other_set.contains("data")
+    other_set.contains("structures")
+    other_set.contains("welcome")
+    united_set = testing_set.union(other_set)
+    print(testing_set.set)
+    print(other_set.set)
+    print(united_set.set)
+
+if __name__ == '__main__':
+    test_set()
