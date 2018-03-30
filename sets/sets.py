@@ -36,3 +36,8 @@ class Set(object):
 
     def union(self, other_set):
         #return a new set that is the union of this set and other_set
+        for element in self.get_keys():
+            if other_set.contains(element):
+                intersection_set.add_element(element)
+        return intersection_set
+
