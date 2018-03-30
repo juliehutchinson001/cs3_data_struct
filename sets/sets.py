@@ -41,3 +41,5 @@ class Set(object):
                 intersection_set.add_element(element)
         return intersection_set
 
+    def intersection(self, other_set):
+        #return a new set that is the intersection of this set and other_set
