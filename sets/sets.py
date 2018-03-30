@@ -34,3 +34,5 @@ class Set(object):
 
     def ht_keys(self): return self.set.keys()
 
+    def union(self, other_set):
+        #return a new set that is the union of this set and other_set
