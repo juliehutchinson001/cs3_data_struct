@@ -32,3 +32,5 @@ class Set(object):
         else: 
             return ValueError("element to be removed doesn't exists")
 
+    def ht_keys(self): return self.set.keys()
+
