@@ -84,3 +84,5 @@ class ArrayQueue(object):
         return len(self.list) == 0
 
     def length(self):
+        """Return the number of items in this queue."""
+        # Count number of items
