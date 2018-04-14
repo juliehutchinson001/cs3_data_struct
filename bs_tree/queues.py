@@ -15,3 +15,4 @@ class LinkedQueue(object):
             for item in iterable:
                 self.enqueue(item)
 
+    def __repr__(self):
