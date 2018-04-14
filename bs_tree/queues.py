@@ -69,3 +69,7 @@ class ArrayQueue(object):
     def __init__(self, iterable=None):
         """Initialize this queue and enqueue the given items, if any."""
         # Initialize a new list (dynamic array) to store the items
+        self.list = list()
+        if iterable is not None:
+            for item in iterable:
+                self.enqueue(item)
