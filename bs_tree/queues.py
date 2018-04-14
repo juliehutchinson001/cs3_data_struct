@@ -101,3 +101,4 @@ class ArrayQueue(object):
         # Return front item, if any
         return self.list[-1] if not self.is_empty() else None
 
+    def dequeue(self):
