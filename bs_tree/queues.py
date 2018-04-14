@@ -81,3 +81,5 @@ class ArrayQueue(object):
     def is_empty(self):
         """Return True if this queue is empty, or False otherwise."""
         # Check if empty
+        return len(self.list) == 0
+
