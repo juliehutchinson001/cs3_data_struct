@@ -109,3 +109,10 @@ class ArrayQueue(object):
         # Remove and return front item, if any
         # Remove and return front item, if any
         
+        return self.list.pop() if not self.is_empty() else None
+
+
+# Implement LinkedQueue and ArrayQueue above, then change the assignment below
+# to use each of your Queue implementations to verify they each pass all tests
+# Queue = LinkedQueue
+Queue = ArrayQueue
