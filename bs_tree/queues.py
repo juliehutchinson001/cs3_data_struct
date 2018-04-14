@@ -24,3 +24,5 @@ class LinkedQueue(object):
         # Check if empty
         return True if self.list.is_empty() else False
 
+
+    def length(self):
