@@ -99,3 +99,5 @@ class ArrayQueue(object):
         """Return the item at the front of this queue without removing it,
         or None if this queue is empty."""
         # Return front item, if any
+        return self.list[-1] if not self.is_empty() else None
+
