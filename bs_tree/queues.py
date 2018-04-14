@@ -28,3 +28,5 @@ class LinkedQueue(object):
     def length(self):
         """Return the number of items in this queue."""
         # Count number of items
+        return self.list.size
+
