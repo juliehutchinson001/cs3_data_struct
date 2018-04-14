@@ -31,3 +31,8 @@ class LinkedQueue(object):
         return self.list.size
 
     #add element to the end of the queue
+    def enqueue(self, item):
+        """Insert the given item at the back of this queue.
+        Running time: O(1) – Why? By appending an item to the
+        ll'tail, the time is constant since we have the pointer"""
+        # Insert given item
