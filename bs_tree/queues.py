@@ -73,3 +73,5 @@ class ArrayQueue(object):
         if iterable is not None:
             for item in iterable:
                 self.enqueue(item)
+
+    def __repr__(self):
