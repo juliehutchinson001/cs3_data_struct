@@ -36,3 +36,5 @@ class LinkedQueue(object):
         Running time: O(1) – Why? By appending an item to the
         ll'tail, the time is constant since we have the pointer"""
         # Insert given item
+        return self.list.append(item)
+
