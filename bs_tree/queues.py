@@ -38,3 +38,4 @@ class LinkedQueue(object):
         # Insert given item
         return self.list.append(item)
 
+    def front(self):
