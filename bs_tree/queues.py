@@ -89,3 +89,7 @@ class ArrayQueue(object):
         return len(self.list)
 
     def enqueue(self, item):
+        """Insert the given item at the back of this queue.
+        Running time: O(n) – Why? shifting positions within an arr
+        represents shuffling through each of the items"""
+        # Insert given item
