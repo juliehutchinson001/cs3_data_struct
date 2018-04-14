@@ -93,3 +93,5 @@ class ArrayQueue(object):
         Running time: O(n) – Why? shifting positions within an arr
         represents shuffling through each of the items"""
         # Insert given item
+        return self.list.insert(0, item)
+
