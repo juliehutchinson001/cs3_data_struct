@@ -83,3 +83,4 @@ class ArrayQueue(object):
         # Check if empty
         return len(self.list) == 0
 
+    def length(self):
