@@ -46,3 +46,8 @@ class LinkedQueue(object):
 
     #remove the oldest element from the front of the queue
     def dequeue(self):
+        """Remove and return the item at the front of this queue,
+        or raise ValueError if this queue is empty.
+        Running time: O(1) – Why? changing the ll head pointer is
+        constant time"""
+        # Remove and return front item, if any
