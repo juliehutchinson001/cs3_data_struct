@@ -16,3 +16,4 @@ class LinkedQueue(object):
                 self.enqueue(item)
 
     def __repr__(self):
+        """Return a string representation of this queue."""
