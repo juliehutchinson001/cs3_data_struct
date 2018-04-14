@@ -44,3 +44,5 @@ class LinkedQueue(object):
         # Return front item, if any
         return self.list.head.data if not self.list.is_empty() else None
 
+    #remove the oldest element from the front of the queue
+    def dequeue(self):
