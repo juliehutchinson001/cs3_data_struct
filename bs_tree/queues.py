@@ -102,3 +102,10 @@ class ArrayQueue(object):
         return self.list[-1] if not self.is_empty() else None
 
     def dequeue(self):
+        """Remove and return the item at the front of this queue,
+        or raise ValueError if this queue is empty.
+        Running time: O(1) – Why? the last item can be easily 
+        accessed through the index, so it represents constant time"""
+        # Remove and return front item, if any
+        # Remove and return front item, if any
+        
