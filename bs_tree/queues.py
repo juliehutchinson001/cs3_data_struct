@@ -17,3 +17,4 @@ class LinkedQueue(object):
 
     def __repr__(self):
         """Return a string representation of this queue."""
+        return 'Queue({} items, front={})'.format(self.length(), self.front())
