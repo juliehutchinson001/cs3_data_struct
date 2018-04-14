@@ -9,7 +9,7 @@ class LinkedQueue(object):
 
     def __init__(self, iterable=None):
         """Initialize this queue and enqueue the given items, if any."""
-
+        # Initialize a new linked list to store the items
         self.list = LinkedList()
         if iterable is not None:
             for item in iterable:
