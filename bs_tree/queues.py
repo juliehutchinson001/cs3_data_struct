@@ -95,3 +95,4 @@ class ArrayQueue(object):
         # Insert given item
         return self.list.insert(0, item)
 
+    def front(self):
