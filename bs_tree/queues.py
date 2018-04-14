@@ -79,3 +79,5 @@ class ArrayQueue(object):
         return 'Queue({} items, front={})'.format(self.length(), self.front())
 
     def is_empty(self):
+        """Return True if this queue is empty, or False otherwise."""
+        # Check if empty
