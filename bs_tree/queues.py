@@ -39,3 +39,6 @@ class LinkedQueue(object):
         return self.list.append(item)
 
     def front(self):
+        """Return the item at the front of this queue without removing it,
+        or None if this queue is empty."""
+        # Return front item, if any
