@@ -51,3 +51,17 @@ class LinkedQueue(object):
         Running time: O(1) – Why? changing the ll head pointer is
         constant time"""
         # Remove and return front item, if any
+        if self.list.is_empty() == True:
+            raise ValueError('queue is empty: {}'.format(self))
+        #save top item in the queue
+        top_item = self.list.head.data
+        #deleting top item from queue
+        self.list.delete(top_item)
+
+        # Remove and return top item, if any
+        return top_item
+
+
+# Implement ArrayQueue below, then change the assignment at the bottom
+# to use this Queue implementation to verify it passes all tests
+class ArrayQueue(object):
