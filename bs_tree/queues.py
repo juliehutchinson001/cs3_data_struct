@@ -30,3 +30,4 @@ class LinkedQueue(object):
         # Count number of items
         return self.list.size
 
+    #add element to the end of the queue
