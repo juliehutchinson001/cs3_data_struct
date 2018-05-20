@@ -7,6 +7,12 @@ class Node(object):
         self.data = data
         self.next = None
 
+    def __repr__(self):
+        """Return a string representation of this node."""
+        return 'Node({!r})'.format(self.data)
+
+
+
 
 
 if __name__ == '__main__':
